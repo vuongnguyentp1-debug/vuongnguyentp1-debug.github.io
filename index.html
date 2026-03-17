@@ -8,18 +8,74 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-        --dark: #0a0e1a;
-        --dark2: #0d1526;
-        --accent: #3498db;
-        --accent2: #1a6b9a;
-        --light: #e8ecf0;
-        --muted: #7f8c9a;
-        --card: #111d35;
-        --border: #1e3050;
+        --bg: #f5f7fa;
+        --bg2: #eef1f6;
+        --surface: #ffffff;
+        --border: #dde3ec;
+        --accent: #1a6b9a;
+        --accent2: #0f4c75;
+        --text: #1c2530;
+        --muted: #5a6a7a;
+        --tag-bg: #e4eef7;
+        --tag-txt: #1a6b9a;
     }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Be Vietnam Pro', sans-serif; background: var(--dark); color: var(--light); line-height: 1.6; }
+    .video-wrap {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 1px 6px rgba(0,0,0,.06);
+    }
 
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+        gap: 1.5rem;
+    }
+
+    .video-wrap {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 1px 6px rgba(0,0,0,.06);
+    }
+
+    .video-label {
+        padding: .9rem 1.2rem;
+        font-size: .85rem;
+        font-weight: 600;
+        color: var(--text);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .video-frame {
+        position: relative;
+        padding-top: 56.25%;
+    }
+
+        .video-frame iframe,
+        .video-frame video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+    }
+/*NAV*/
   nav {
     position: sticky; top: 0; z-index: 100;
     background: rgba(13,15,18,.92); backdrop-filter: blur(14px);
@@ -120,123 +176,152 @@
         <a href="#lienhe">Liên hệ</a>
     </nav>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-photo">👤</div>
-    <div class="hero-info">
-      <div class="hero-role">Hồ sơ xin việc · HVAC Engineer</div>
-      <h1 class="hero-name">NGUYEN DUY VUONG</h1>
-      <p class="hero-summary">
-        Kỹ sư HVAC với 2+ năm kinh nghiệm triển khai HVAC và ứng dụng Revit MEP.
-        Có kinh nghiệm dựng mô hình theo bản vẽ thiết kế, xuất shopdrawing
-        và phối hợp kỹ thuật đa bộ môn. Mong muốn làm việc tại TP. Hồ Chí Minh.
-      </p>
-      <div class="hero-tags">
-          <span class="tag">HVAC</span>
-          <span class="tag">Revit MEP</span>
-          <span class="tag">Shopdrawing</span>
-          <span class="tag">BIM</span>
-          <span class="tag">AutoCAD</span>
-          <span class="tag">Navisworks</span>
-          <span class="tag">Carrier HAP</span>
-          <span class="tag">Trace 700</span>
-          <span class="tag">Duct Sizer</span>
-          <span class="tag">Pipe Flow Expert</span>
-          <span class="tag">Excel Calculation</span>
-      </div>
-    </div>
-  </div>
-</section>
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-photo">👤</div>
+            <div class="hero-info">
+                <div class="hero-role">Hồ sơ xin việc · HVAC Engineer</div>
+                <h1 class="hero-name">NGUYEN DUY VUONG</h1>
+                <p class="hero-summary">
+                    Kỹ sư HVAC với 2+ năm kinh nghiệm triển khai HVAC và ứng dụng Revit MEP.
+                    Có kinh nghiệm dựng mô hình theo bản vẽ thiết kế, xuất shopdrawing
+                    và phối hợp kỹ thuật đa bộ môn. Mong muốn làm việc tại TP. Hồ Chí Minh.
+                </p>
+                <div class="hero-tags">
+                    <span class="tag">HVAC</span>
+                    <span class="tag">Revit MEP</span>
+                    <span class="tag">Shopdrawing</span>
+                    <span class="tag">BIM</span>
+                    <span class="tag">AutoCAD</span>
+                    <span class="tag">Navisworks</span>
+                    <span class="tag">Carrier HAP</span>
+                    <span class="tag">Trace 700</span>
+                    <span class="tag">Duct Sizer</span>
+                    <span class="tag">Pipe Flow Expert</span>
+                    <span class="tag">Excel Calculation</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="section-divider" id="thongtin">THÔNG TIN CÁ NHÂN</div>
-<div class="section">
-  <div class="cards">
-    <div class="card">
-      <div class="card-icon">👤</div>
-      <div class="card-num">01</div>
-      <h3>THÔNG TIN CÁ NHÂN</h3>
-      <ul>
-          <li>HỌ & TÊN / FULL NAME: NGUYEN DUY VUONG</li>
-          <li>NĂM SINH / DATE OF BIRTH: 07/06/2002</li>
-          <li>QUÊ QUÁN / HOMETOWN: HIEP VINH-CANH VINH-VAN CANH</li>
-        <li>Giới tính: Nam</li>
-      </ul>
+    <div class="section-divider" id="thongtin">THÔNG TIN CÁ NHÂN</div>
+    <div class="section">
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">👤</div>
+                <div class="card-num">01</div>
+                <h3>THÔNG TIN CÁ NHÂN</h3>
+                <ul>
+                    <li>HỌ & TÊN / FULL NAME: NGUYEN DUY VUONG</li>
+                    <li>NĂM SINH / DATE OF BIRTH: 07/06/2002</li>
+                    <li>QUÊ QUÁN / HOMETOWN: HIEP VINH-CANH VINH-VAN CANH</li>
+                    <li>Giới tính: Nam</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-icon">📞</div>
+                <div class="card-num">02</div>
+                <h3>THÔNG TIN LIÊN HỆ</h3>
+                <ul>
+                    <li>Phone: <a href="tel:037978860">0379.788.602</a></li>
+                    <a href="https://zalo.me/0379788602" class="zalo-btn">
+                        Chat Zalo
+                    </a>
+                    <li>Email: <a href="mailto:vuongnguyentp1@gmail.com">vuongnguyentp1@gmail.com</a></li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <div class="card-num">03</div>
+                <h3>MỤC TIÊU NGHỀ NGHIỆP</h3>
+                <p>Trở thành kỹ sư HVAC giỏi, thành thạo BIM/Revit MEP, có khả năng quản lý dự án và thiết kế hệ thống cơ điện tòa nhà lớn.</p>
+            </div>
+        </div>
     </div>
-    <div class="card">
-      <div class="card-icon">📞</div>
-      <div class="card-num">02</div>
-      <h3>THÔNG TIN LIÊN HỆ</h3>
-      <ul>
-        <li>Phone: <a href="tel:037978860">0379.788.602</a></li>
-        <a href="https://zalo.me/0379788602" class="zalo-btn">
-            Chat Zalo
-        </a>
-        <li>Email: <a href="mailto:vuongnguyentp1@gmail.com">vuongnguyentp1@gmail.com</a></li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-icon">🎯</div>
-      <div class="card-num">03</div>
-      <h3>MỤC TIÊU NGHỀ NGHIỆP</h3>
-      <p>Trở thành kỹ sư HVAC giỏi, thành thạo BIM/Revit MEP, có khả năng quản lý dự án và thiết kế hệ thống cơ điện tòa nhà lớn.</p>
-    </div>
-  </div>
-</div>
 
-<div class="section-divider" id="kynang">KỸ NĂNG</div>
-<div class="section">
-  <div class="skills-grid">
-    <div class="skill-item"><div class="skill-name">Revit MEP <span>90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-    <div class="skill-item"><div class="skill-name">AutoCAD <span>85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-    <div class="skill-item"><div class="skill-name">HVAC Design <span>80%</span></div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-    <div class="skill-item"><div class="skill-name">Shopdrawing <span>85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-    <div class="skill-item"><div class="skill-name">BIM Coordination <span>75%</span></div><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
-    <div class="skill-item"><div class="skill-name">MS Office <span>80%</span></div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-  </div>
-</div>
-
-<div class="section-divider" id="kinhnghiem">KINH NGHIỆM LÀM VIỆC</div>
-<div class="section">
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-date">2022 – NAY</div>
-      <div class="tl-role">Kỹ sư HVAC – Triển khai dự án</div>
-      <div class="tl-company">Công ty Cơ điện lạnh XYZ · TP. Hồ Chí Minh</div>
-      <div class="tl-desc">Dựng mô hình Revit MEP theo bản vẽ thiết kế, xuất shopdrawing và phối hợp đa bộ môn (cơ – điện – nước). Tham gia thi công và giám sát lắp đặt hệ thống HVAC tại công trình văn phòng, thương mại.</div>
+    <div class="section-divider" id="kynang">KỸ NĂNG</div>
+    <div class="section">
+        <div class="skills-grid">
+            <div class="skill-item"><div class="skill-name">Revit MEP <span>90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+            <div class="skill-item"><div class="skill-name">AutoCAD <span>85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+            <div class="skill-item"><div class="skill-name">HVAC Design <span>80%</span></div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+            <div class="skill-item"><div class="skill-name">Shopdrawing <span>85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+            <div class="skill-item"><div class="skill-name">BIM Coordination <span>75%</span></div><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+            <div class="skill-item"><div class="skill-name">MS Office <span>80%</span></div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+        </div>
     </div>
-    <div class="tl-item">
-      <div class="tl-date">2021 – 2022</div>
-      <div class="tl-role">Thực tập sinh Kỹ thuật MEP</div>
-      <div class="tl-company">Công ty Tư vấn Thiết kế ABC · TP. Hồ Chí Minh</div>
-      <div class="tl-desc">Hỗ trợ vẽ bản vẽ thi công, tham gia họp phối hợp kỹ thuật và kiểm tra bản vẽ shopdrawing HVAC & Plumbing.</div>
-    </div>
-  </div>
-</div>
 
-<div class="section-divider" id="bangcap">BẰNG CẤP & CHỨNG CHỈ</div>
-<div class="section">
-  <div class="cert-grid">
-    <div class="cert-card"><div class="cert-icon">🎓</div><div><div class="cert-name">Kỹ sư Kỹ thuật Nhiệt</div><div class="cert-issuer">Đại học Bách Khoa · 2024</div></div></div>
-    <div class="cert-card"><div class="cert-icon">📜</div><div><div class="cert-name">Autodesk Certified – Revit MEP</div><div class="cert-issuer">Autodesk · 2023</div></div></div>
-    <div class="cert-card"><div class="cert-icon">📜</div><div><div class="cert-name">Chứng chỉ BIM Professional</div><div class="cert-issuer">BIM Academy Vietnam · 2023</div></div></div>
-    <div class="cert-card"><div class="cert-icon">🌐</div><div><div class="cert-name">TOEIC 650</div><div class="cert-issuer">IIG Vietnam · 2022</div></div></div>
-  </div>
-</div>
-
-<div class="section-divider" id="lienhe">LIÊN HỆ</div>
-<div class="section">
-  <div class="cards" style="max-width:700px">
-    <div class="card">
-      <h3>📍 ĐỊA CHỈ HIỆN TẠI</h3>
-      <p style="margin-top:.5rem">TP. Hồ Chí Minh </p>
+    <div class="section-divider" id="kinhnghiem">KINH NGHIỆM LÀM VIỆC</div>
+    <div class="section">
+        <div class="timeline">
+            <div class="tl-item">
+                <div class="tl-date">2022 – NAY</div>
+                <div class="tl-role">Kỹ sư HVAC – Triển khai dự án</div>
+                <div class="tl-company">Công ty Cơ điện lạnh XYZ · TP. Hồ Chí Minh</div>
+                <div class="tl-desc">Dựng mô hình Revit MEP theo bản vẽ thiết kế, xuất shopdrawing và phối hợp đa bộ môn (cơ – điện – nước). Tham gia thi công và giám sát lắp đặt hệ thống HVAC tại công trình văn phòng, thương mại.</div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-date">2021 – 2022</div>
+                <div class="tl-role">Thực tập sinh Kỹ thuật MEP</div>
+                <div class="tl-company">Công ty Tư vấn Thiết kế ABC · TP. Hồ Chí Minh</div>
+                <div class="tl-desc">Hỗ trợ vẽ bản vẽ thi công, tham gia họp phối hợp kỹ thuật và kiểm tra bản vẽ shopdrawing HVAC & Plumbing.</div>
+            </div>
+        </div>
     </div>
-    <div class="card">
-      <h3>📬 GỬI EMAIL NGAY</h3>
-      <p style="margin-top:.5rem"><a href="mailto:vuongnguyentp1@gmail.com">vuongnguyentp1@gmail.com</a></p>
-    </div>
-  </div>
-</div>
 
-<footer>© 2025 Nguyen Duy Vuong · CV  · Made with ❤️</footer>
+    <div class="section-divider" id="bangcap">BẰNG CẤP & CHỨNG CHỈ</div>
+    <div class="section">
+        <div class="cert-grid">
+            <div class="cert-card"><div class="cert-icon">🎓</div><div><div class="cert-name">Kỹ sư Kỹ thuật Nhiệt</div><div class="cert-issuer">Đại học Bách Khoa · 2024</div></div></div>
+            <div class="cert-card"><div class="cert-icon">📜</div><div><div class="cert-name">Autodesk Certified – Revit MEP</div><div class="cert-issuer">Autodesk · 2023</div></div></div>
+            <div class="cert-card"><div class="cert-icon">📜</div><div><div class="cert-name">Chứng chỉ BIM Professional</div><div class="cert-issuer">BIM Academy Vietnam · 2023</div></div></div>
+            <div class="cert-card"><div class="cert-icon">🌐</div><div><div class="cert-name">TOEIC 650</div><div class="cert-issuer">IIG Vietnam · 2022</div></div></div>
+        </div>
+    </div>
+
+    <div class="section-divider" id="lienhe">LIÊN HỆ</div>
+    <div class="section">
+        <div class="cards" style="max-width:700px">
+            <div class="card">
+                <h3>📍 ĐỊA CHỈ HIỆN TẠI</h3>
+                <p style="margin-top:.5rem">TP. Hồ Chí Minh </p>
+            </div>
+            <div class="card">
+                <h3>📬 GỬI EMAIL NGAY</h3>
+                <p style="margin-top:.5rem"><a href="mailto:vuongnguyentp1@gmail.com">vuongnguyentp1@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- VIDEO SẢN PHẨM -->
+    <div class="sec-divider" id="video">VIDEO SẢN PHẨM</div>
+    <div class="sec-wrap alt">
+        <div class="section">
+            <div class="video-grid">
+
+                <!-- YouTube: lấy ID từ link youtube.com/watch?v=XXXXXXX -->
+                <div class="video-wrap">
+                    <div class="video-label">Dự án HVAC Văn Phòng A</div>
+                    <div class="video-frame">
+                        <iframe src="https://youtu.be/c5llVZ79WlI?si=gla6oDOslGtAMbDy/gla6oDOslGtAMbDyỞ_ĐÂY"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Video MP4 tự upload -->
+                <div class="video-wrap">
+                    <div class="video-label">Shopdrawing Demo</div>
+                    <div class="video-frame">
+                        <video controls>
+                            <source src="video/ten-file.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>© 2025 Nguyen Duy Vuong · CV  · Made with ❤️</footer>
 </body>
 </html>

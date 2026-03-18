@@ -493,6 +493,111 @@
                 font-size: .72rem;
             }
         }
+        /* ── PORTFOLIO TABLE ── */
+        .portfolio-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--surface);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 8px rgba(0,0,0,.07);
+            border: 1px solid var(--border);
+        }
+
+            .portfolio-table thead tr {
+                background: var(--accent);
+                color: #fff;
+            }
+
+            .portfolio-table th {
+                padding: 1rem 1.5rem;
+                font-size: .85rem;
+                font-weight: 700;
+                letter-spacing: .06em;
+                text-transform: uppercase;
+                text-align: left;
+            }
+
+            .portfolio-table td {
+                padding: 1.2rem 1.5rem;
+                font-size: .88rem;
+                color: var(--text);
+                border-bottom: 1px solid var(--border);
+                vertical-align: middle;
+            }
+
+            .portfolio-table tr:last-child td {
+                border-bottom: none;
+            }
+
+            .portfolio-table tr:hover td {
+                background: #f0f6ff;
+            }
+
+            .portfolio-table .project-name {
+                font-weight: 700;
+                color: var(--text);
+                margin-bottom: .25rem;
+            }
+
+            .portfolio-table .project-sub {
+                font-size: .78rem;
+                color: var(--muted);
+            }
+
+        .portfolio-imgs {
+            display: flex;
+            gap: .5rem;
+            flex-wrap: wrap;
+        }
+
+            .portfolio-imgs img {
+                width: 120px;
+                height: 80px;
+                object-fit: cover;
+                border-radius: 6px;
+                border: 1px solid var(--border);
+                cursor: pointer;
+                transition: transform .2s, box-shadow .2s;
+            }
+
+                .portfolio-imgs img:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 4px 16px rgba(0,0,0,.15);
+                }
+
+        /* LIGHTBOX */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(0,0,0,.85);
+            align-items: center;
+            justify-content: center;
+        }
+
+            .lightbox.active {
+                display: flex;
+            }
+
+            .lightbox img {
+                max-width: 90vw;
+                max-height: 85vh;
+                border-radius: 8px;
+                box-shadow: 0 8px 40px rgba(0,0,0,.5);
+            }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            font-weight: 300;
+            line-height: 1;
+        }
     </style>
 </head>
 <body>
@@ -625,6 +730,61 @@
             </div>
         </div>
     </div>
+    <!-- PORTFOLIO -->
+    <div class="section-divider" id="portfolio">PORTFOLIO – DỰ ÁN</div>
+    <div class="section">
+        <table class="portfolio-table">
+            <thead>
+                <tr>
+                    <th style="width:35%">Tên dự án</th>
+                    <th>Hình ảnh</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="project-name">Dự án HVAC Văn Phòng A</div>
+                        <div class="project-sub">Revit MEP · Shopdrawing · 2023</div>
+                    </td>
+                    <td>
+                        <div class="portfolio-imgs">
+                            <img src="anh-du-an-1.jpg" onclick="openLightbox(this.src)" alt="Dự án 1">
+                            <img src="anh-du-an-2.jpg" onclick="openLightbox(this.src)" alt="Dự án 1">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="project-name">Dự án HVAC Trung Tâm Thương Mại</div>
+                        <div class="project-sub">BIM · AutoCAD · 2024</div>
+                    </td>
+                    <td>
+                        <div class="portfolio-imgs">
+                            <img src="anh-du-an-3.jpg" onclick="openLightbox(this.src)" alt="Dự án 2">
+                            <img src="anh-du-an-4.jpg" onclick="openLightbox(this.src)" alt="Dự án 2">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="project-name">Dự án Khách Sạn 5 Sao</div>
+                        <div class="project-sub">HVAC Design · Navisworks · 2024</div>
+                    </td>
+                    <td>
+                        <div class="portfolio-imgs">
+                            <img src="anh-du-an-5.jpg" onclick="openLightbox(this.src)" alt="Dự án 3">
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+        <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">×</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
     <!-- VIDEO SẢN PHẨM -->
     <div class="sec-divider" id="video">VIDEO SẢN PHẨM</div>
     <div class="sec-wrap alt">

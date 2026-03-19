@@ -200,25 +200,27 @@
         }
 
         .hero-role {
-            font-size: .75rem;
-            font-weight: 600;
+            color: #38BDF8;
+            font-size: .72rem;
+            font-weight: 700;
             letter-spacing: .18em;
             text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: .6rem;
+            margin-bottom: .5rem;
         }
 
         .hero-name {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.2rem, 5vw, 3.4rem);
-            font-weight: 900;
-            line-height: 1.1;
-            color: var(--text);
-            margin-bottom: 1.2rem;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #38BDF8, #6366F1);
+            -webkit-background-clip: text; 
+            background-clip: text; 
+            -webkit-text-fill-color: transparent;
+            color: transparent; /* fallback */
         }
-
         .hero-summary {
-            color: var(--muted);
+            color: #E5E7EB;
             font-size: .92rem;
             max-width: 520px;
             margin-bottom: 1.8rem;
@@ -286,7 +288,7 @@
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 6px;
-            padding: 1.5rem;
+            padding: 1.8rem;
             transition: border-color .25s, transform .25s;
         }
 
@@ -316,17 +318,18 @@
             line-height: 1;
         }
 
-        .card h3 {
-            font-size: .88rem;
-            font-weight: 700;
-            margin-bottom: .8rem;
-            letter-spacing: .05em;
+        .card h3,
+        .tl-role,
+        .cert-name2 {
+            color: #E5E7EB;
         }
 
-        .card p, .card li {
-            font-size: .84rem;
-            color: var(--muted);
-            line-height: 1.85;
+        .card p, .card li,
+        .tl-desc,
+        .tl-company,
+        .cert-issuer {
+            color: #9CA3AF;
+            line-height: 1.8;
         }
 
         .card ul {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Online –NGUYEN DUY VUONG</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         *, *::before, *::after {
             box-sizing: border-box;
@@ -712,6 +713,28 @@
             font-weight: 300;
             line-height: 1;
         }
+        /* ── ANIMATION TIMELINE ── */
+        .tl-card {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+
+            .tl-card.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        /* ── ANIMATION TIMELINE ── */
+        .tl-card {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+
+            .tl-card.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
     </style>
 </head>
 <body>
@@ -1025,5 +1048,19 @@
     </div>
 
     <footer>© 2025 Nguyen Duy Vuong · CV  · Made with ❤️</footer>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.tl-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.2}s`;
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>

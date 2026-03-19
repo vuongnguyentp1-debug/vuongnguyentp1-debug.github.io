@@ -794,19 +794,67 @@
                 background: var(--accent);
                 border-color: var(--accent);
             }
+        /* ── LANGUAGE TOGGLE ── */
+        .lang-btn {
+            margin-left: .5rem;
+            background: #e8f0fe;
+            border: 1px solid #c5d8f8;
+            color: var(--accent);
+            padding: .3rem .8rem;
+            border-radius: 20px;
+            font-size: .78rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .2s;
+        }
+
+            .lang-btn:hover {
+                background: var(--accent);
+                color: #fff;
+            }
+
+        [data-lang="en"] .vi {
+            display: none;
+        }
+
+        [data-lang="vi"] .en {
+            display: none;
+        }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="logo"></div>
-        <a href="#thongtin">Thông tin</a>
-        <a href="#duan">Dự án</a>
-        <a href="#kynang">Kỹ năng</a>
-        <a href="#kinhnghiem">Kinh nghiệm</a>
-        <a href="#bangcap">Bằng cấp</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#lienhe">Liên hệ</a>
+        <a href="#thongtin">
+            <span class="vi">Thông tin</span>
+            <span class="en">Information</span>
+        </a>
+        <a href="#duan">
+            <span class="vi">Dự án</span>
+            <span class="en">Project</span>
+        </a>
+        <a href="#kynang">
+            <span class="vi">Kỹ năng</span>
+            <span class="en">Skills</span>
+        </a>
+        <a href="#kinhnghiem">
+            <span class="vi">Kinh nghiệm</span>
+            <span class="en">Experience</span>
+        </a>
+        <a href="#bangcap">
+            <span class="vi">Bằng cấp</span>
+            <span class="en">Certificates</span>
+        </a>
+        <a href="#portfolio">
+            <span class="vi">Portfolio</span>
+            <span class="en">Portfolio</span>
+        </a>
+        <a href="#lienhe">
+            <span class="vi">Liên hệ</span>
+            <span class="en">Contact</span>
+        </a>
+        <button class="lang-btn" onclick="toggleLang()">🇬🇧 EN</button>
     </nav>
 
     <section class="hero">
@@ -815,7 +863,10 @@
                 <img src="z7631657496655_5c575fa5eeb7afe05acd3ddb377285e1.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
             </div>
             <div class="hero-info">
-                <div class="hero-role">Hồ sơ xin việc · HVAC Engineer</div>
+                <div class="hero-role">
+                    <span class="vi">Hồ sơ xin việc · Kỹ sư HVAC</span>
+                    <span class="en">Job Application · HVAC Engineer</span>
+                </div>
                 <h1 class="hero-name">NGUYEN DUY VUONG</h1>
                 <p class="hero-summary">
                     I am seeking a professional and challenging working environment to grow, learn from experts, and apply my technical skills.
@@ -875,6 +926,10 @@
     </div>
 
     <div class="section-divider" id="kynang">KỸ NĂNG</div>
+    <a href="#kinhnghiem">
+        <span class="vi">KỸ NĂNG</span>
+        <span class="en">SKILLS</span>
+    </a>
     <div class="section">
         <div class="skills-grid">
             <div class="skill-item"><div class="skill-name">Revit MEP <span>90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
@@ -887,6 +942,9 @@
         </div>
     </div>
     <div class="section-divider" id="kinhnghiem">KINH NGHIỆM LÀM VIỆC</div>
+    <span class="vi">KINH NGHIỆM LÀM VIỆC</span>
+    <span class="en">WORK EXPERIENCE</span>
+    </a>
     <div class="section">
         <div class="timeline">
             <div class="tl-item">
@@ -907,8 +965,10 @@
             </div>
         </div>
     </div>
-
-    <div class="section-divider" id="bangcap">BẰNG CẤP & CHỨNG CHỈ</div>
+    <div class="section-divider" id="bangcap">
+        <span class="vi">BẰNG CẤP & CHỨNG CHỈ</span>
+        <span class="en">CERTIFICATES</span>
+    </div>
     <div class="section">
         <table class="cert-table">
             <thead>
@@ -985,6 +1045,20 @@
                         </div>
                     </td>
                 </tr>
+                <script>
+                    function toggleLang() {
+                        const html = document.documentElement;
+                        const btn = document.querySelector('.lang-btn');
+                        if (html.dataset.lang === 'en') {
+                            html.dataset.lang = 'vi';
+                            btn.textContent = '🇬🇧 EN';
+                        } else {
+                            html.dataset.lang = 'en';
+                            btn.textContent = '🇻🇳 VI';
+                        }
+                    }
+                    document.documentElement.dataset.lang = 'vi';
+                </script>
             </tbody>
         </table>
     </div>

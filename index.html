@@ -795,16 +795,6 @@
                 border-color: var(--accent);
             }
         /* ── LANGUAGE TOGGLE ── */
-
-        <div class="lang-toggle" >
-        <button class="lang-opt active" id="btn-vi" onclick="setLang('vi')" >
-        <img src="Logo Viet.png" width="20" > VI
-        </button >
-        <span > |</span >
-        <button class="lang-opt" id="btn-en" onclick="setLang('en')" >
-        <img src="Logo anh.png" width="20" > EN
-        </button >
-        </div >
         [data-lang="en"] .vi {
             display: none;
         }
@@ -815,7 +805,15 @@
     </style>
 </head>
 <body>
-
+    <div class="lang-toggle">
+        <button class="lang-opt active" id="btn-vi" onclick="setLang('vi')">
+            <img src="Logo Viet.png" width="20"> VI
+        </button>
+        <span>|</span>
+        <button class="lang-opt" id="btn-en" onclick="setLang('en')">
+            <img src="Logo anh.png" width="20"> EN
+        </button>
+    </div>
     <nav>
         <div class="logo"></div>
         <a href="#thongtin">

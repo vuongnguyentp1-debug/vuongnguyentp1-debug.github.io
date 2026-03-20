@@ -954,26 +954,29 @@
             <div class="skill-item"><div class="skill-name">Carrier HAP <span>60%</span></div><div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div></div>
         </div>
     </div>
-    <div class="section-divider" id="kinhnghiem">KINH NGHIỆM LÀM VIỆC</div>
-    <span class="vi">KINH NGHIỆM LÀM VIỆC</span>
-    <span class="en">WORK EXPERIENCE</span>
-    <div class="section">
-        <div class="timeline">
-            <div class="tl-item">
-                <div class="tl-date">8/2024 – Present</div>
-                <div class="tl-role">Bim Modeler, Coodinator, Shop drawing</div>
-                <div class="tl-company">CÔNG TY CỔ PHẦN XÂY DỰNG COTECCONS · TP. Hồ Chí Minh</div>
-                <div class="tl-desc">Dựng mô hình Revit MEP theo bản vẽ thiết kế, xuất shopdrawing và phối hợp đa bộ môn (cơ – điện – nước). Tham gia thi công và giám sát lắp đặt hệ thống HVAC tại công trình văn phòng, thương mại.</div>
+    <div class="section-divider" id="kinhnghiem">
+        <span class="vi">KINH NGHIỆM LÀM VIỆC</span>
+        <span class="en">WORK EXPERIENCE</span>
+    </div>
+    <div class="tl-card">
+        <div class="tl-badge">8/2024<br>– NAY</div>
+        <div class="tl-body">
+            <div class="tl-role">
+                <span class="vi">BIM Modeler · Coordinator · Shop Drawing</span>
+                <span class="en">BIM Modeler · Coordinator · Shop Drawing</span>
             </div>
-            <div class="tl-item">
-                <div class="tl-date">12/2023 – 07/2024</div>
-                <div class="tl-role">OUTSOURCE</div>
-                <div class="tl-company">BCA-THANG LONG HCM BRANCH CO., LTD· TP. Hồ Chí Minh</div>
-                <div class="tl-desc">
-                    Phối hợp MEPF hệ ống chính cho hầm B1, tầng 1 nhà PNA, tầng 4 nhà PTB (hệ sprinkler & chữa cháy vách tường)
-                    Bóc tách khối lượng công trình PNA
-                    Dựng model & triển khai shop drawing hệ FM-200 fire suppression system cho tầng 1, 2, 4 nhà PTB.
-                </div>
+            <div class="tl-company">
+                🏢 <span class="vi">Công ty Cổ Phần Xây Dựng COTECCONS · TP. Hồ Chí Minh</span>
+                <span class="en">COTECCONS Construction JSC · Ho Chi Minh City</span>
+            </div>
+            <div class="tl-desc">
+                <span class="vi">Dựng mô hình Revit MEP theo bản vẽ thiết kế, xuất shopdrawing và phối hợp đa bộ môn (cơ – điện – nước).</span>
+                <span class="en">Built Revit MEP models from design drawings, exported shopdrawings and coordinated multi-discipline (mechanical – electrical – plumbing).</span>
+            </div>
+            <div class="tl-tags">
+                <span class="tl-tag">Revit MEP</span>
+                <span class="tl-tag">BIM</span>
+                <span class="tl-tag">Shopdrawing</span>
             </div>
         </div>
     </div>
@@ -985,8 +988,10 @@
         <table class="cert-table">
             <thead>
                 <tr>
-                    <th style="width:45%">Bằng cấp / Chứng chỉ</th>
-                    <th>Ảnh chứng chỉ</th>
+                    <th>
+                        <span class="vi">Ảnh chứng chỉ</span>
+                        <span class="en">Certificate Images</span>
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -997,6 +1002,10 @@
                             <div>
                                 <div class="cert-name2">Kỹ sư Kỹ thuật Nhiệt</div>
                                 <div class="cert-issuer2">Đại học Sư Phạm Kĩ Thuật TP. HỒ CHÍ MINH · 2024</div>
+                            </div>
+                            <div class="cert-issuer2">
+                                <span class="vi">Đại học Sư Phạm Kĩ Thuật TP. HỒ CHÍ MINH · 2024</span>
+                                <span class="en">HCMC University of Technology and Education · 2024</span>
                             </div>
                         </div>
                     </td>
@@ -1057,20 +1066,6 @@
                         </div>
                     </td>
                 </tr>
-                <script>
-                    function toggleLang() {
-                        const html = document.documentElement;
-                        const btn = document.querySelector('.lang-btn');
-                        if (html.dataset.lang === 'en') {
-                            html.dataset.lang = 'vi';
-                            btn.textContent = '🇬🇧 EN';
-                        } else {
-                            html.dataset.lang = 'en';
-                            btn.textContent = '🇻🇳 VI';
-                        }
-                    }
-                    document.documentElement.dataset.lang = 'vi';
-                </script>
             </tbody>
         </table>
     </div>
@@ -1205,6 +1200,20 @@
             card.style.transitionDelay = `${index * 0.2}s`;
             observer.observe(card);
         });
+    </script>
+    <script>
+        function toggleLang() {
+            const html = document.documentElement;
+            const btn = document.querySelector('.lang-btn');
+            if (html.dataset.lang === 'en') {
+                html.dataset.lang = 'vi';
+                btn.textContent = '🇬🇧 EN';
+            } else {
+                html.dataset.lang = 'en';
+                btn.textContent = '🇻🇳 VI';
+            }
+        }
+        document.documentElement.dataset.lang = 'vi';
     </script>
 </body>
 </html>
